@@ -17,6 +17,11 @@ list-style: none;
     --color-blue: #2196F3;
     --color-gray-transparent: rgba(255, 255, 255, 0.6);
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-text-color: #212121;
+    --accent-color: #2196f3;
+    --input-border-color: rgba(33, 33, 33, 0.2);
+    --form-text-color: rgba(117, 117, 117, 0.5);
+    --secondary-text-color: #757575;
 }
 body {
     font-family: Roboto, sans-serif;
@@ -202,6 +207,8 @@ header .conteiner {
     width: 100%;
     height: 100%;
     background-color:rgba(0, 0, 0, 0.2);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
     opacity: 0;
@@ -219,6 +226,7 @@ header .conteiner {
     transition: transform 250ms var(--timing-function);
     width: 528px;
     height: 581px;
+    padding: 40px;
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -226,27 +234,44 @@ header .conteiner {
 }
 .modal-buttom {
     position: absolute;
+    fill: var(--color2, #000);
     top: 8px;
     right: 8px;
 }
 .form-modal {
-    display: flex;
-    flex-flow: column;
-    position: absolute;
-    white-space: nowrap;
-    padding: 40px 40px;
-    width: 528px;
-    height: 581px;
-
+    width: 100%;
 }
-.div-form {
+.form-field{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.text-comments {
+    margin-bottom: 20px;
+}
+.icon-input{
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .title-form {
+    white-space: nowrap;
     color:#212121;
+    font-weight: 700;
     font-size: 20px;
     line-height: 23px;
+    text-align: center;
+    color: var(--primary-text-color);
+    margin-bottom: 12px;
 }
+label {
+    margin-bottom: 4px;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--secondary-text-color);
+    }
 input {
     width: 448px;
     height: 40px;
@@ -255,19 +280,116 @@ input {
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
-    }
-label {
-    font-size: 12px;
-    line-height: 14px;
+    margin-left: 15px;
+    font-size: 14px;
+    line-height: 1.16;
     letter-spacing: 0.01em;
-    color: #757575;
-    margin-top: 10px;
-    margin-bottom: 4px;
+    outline: none;
+    padding-left: 45px;
     }
+.input:focus {
+    border: 1px solid var(--accent-color);
+}
+.input:hover {
+    border: 1px solid var(--accent-color);
+}
 .modal-icon {
     position: absolute;
-    top: 30%;
-    left: 15px;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: var(--primary-text-color);
+}
+.input:focus ~ .modal-icon {
+    fill: var(--accent-color);
+}
+.input:hover ~ .modal-icon {
+    fill: var(--accent-color);
+}
+textarea {
+    resize: none;
+    height: 120px;
+    padding: 12px 16px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    outline: none;
+}
+textarea:focus {
+    border: 1px solid var(--accent-color);
+}
+textarea:hover {
+    border: 1px solid var(--accent-color);
+}
+textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--form-text-color);
+}
+.checkbox-field {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.label-rules {
+    display: flex;
+}
+.label-rules a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+.label-rules a:visited {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.icon-checkbox {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    margin-right: 7px;
+}
+.checkbox:checked + .icon-checkbox {
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    background-image: url(./img/icon\ check.svg);
+    background-origin: border-box;
+}
+.btn-submit {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    padding: 10px 55px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 1.87;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-wight);
+    transition: background-color 250ms var(--timing-function);
+}
+.btn-submit:hover {
+    background-color: #188ce8;
+}
+
+.modal-buttom:hover {
+    fill: var(--accent-color);
 }
 /*========== Способности ==========*/
 .ability-icons {
@@ -460,6 +582,7 @@ footer {
     font-size: 14px;
     line-height: 24px;
     margin-top: 20px;
+    white-space: nowrap;
 } 
 .adress a {
 font-size: 14px;
@@ -504,6 +627,55 @@ font-style: normal;
 }
 b {
     color: var(--color-wight);
+}
+.footeer-item {
+    justify-content: center;
+}
+.footer-form {
+    display: flex;
+}
+.footer-input {
+    width: 358px;
+    height: 50px;
+    padding: 15px 16px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    background-color: #2F303A;
+    display: inline-flex;
+    margin-right: 10px;
+}
+.footer-form .button {
+    width: 200px;
+    height: 50px;
+    padding: 10px 29px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 1.87;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: left;
+    border: none;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-wight);
+    background-color: var(--accent-color);
+}
+.icon-send {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-wight);
+}
+.join {
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 /*========== Стили к портфолио========== */

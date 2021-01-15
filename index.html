@@ -337,44 +337,71 @@
                         </li>
                     </ul>
                 </li>
+                <li class="footeer-item">
+                    <b class="join">Подпишитесь на рассылку</b>
+                    <form action="" class="footer-form">
+                    <input type="email" name="email" placeholder="E-mail" class="footer-input" autocomplete="off"/>
+                    <button type="submit" class="button primary">
+                        Подписаться
+                        <svg class="icon-send">
+                            <use href="./img/symbol-defss.svg#icon-icon-send"></use>
+                        </svg>
+                    </button>
+                    </form>
+                </li>
             </ul>
         </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
+            <form action="#" class="form-modal" autocomplete="off">
+                <h4 class="title-form">Оставьте свои данные, мы вам перезвоним</h4>
+                <div class="form-field">
+                    <label for="name">Имя</label>
+                    <div class="icon-input">
+                        <input id="name" type="text" name="name" class="input">
+                        <svg class="modal-icon" width="18" height="18">
+                            <use xlink:href="./img/symbol-defss.svg#icon-person-black-18dp-1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="tell">Телефон</label>
+                    <div class="icon-input">
+                        <input id="tell" type="tell" name="tell" class="input">
+                        <svg class="modal-icon" width="18" height="18">
+                            <use href="./img/symbol-defss.svg#icon-phone-black-18dp-1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-field">
+                <label for="email">Почта</label>
+                    <div class="icon-input">
+                        <input id="email" type="email" name="email" class="input">
+                        <svg class="modal-icon" width="18" height="18">
+                            <use href="./img/symbol-defss.svg#icon-email-black-18dp-1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-field text-comments">
+                    <label for="coments">Комментарий</label>
+                    <textarea name="coments" id="coments" placeholder="Введите текст"></textarea>
+                </div>
+                <div class="form-field checkbox-field">
+                    <label class="label label-rules">
+                    <input type="checkbox" name="policy" class="checkbox" />
+                    <span class="icon-checkbox"></span>
+                    Соглашаюсь с рассылкой и принимаю
+                    <a href="" class="conditions">Условия договора</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Отправить</button>
+            </form>
             <buttom class="modal-buttom" data-modal-close>
                 <svg height="30" width="30">
-                    <use xlink:href="./img/symbol-defs.svg#icon-close"></use>
+                    <use href="./img/symbol-defs.svg#icon-close"></use>
                 </svg>
             </buttom>
-            <form action="#" class="form-modal">
-                <b class="title-form">Оставьте свои данные, мы вам перезвоним</b>
-                <label for="name">Имя</label>
-                <div class="div-form">
-                    <input id="name" type="text" name="name">
-                    <svg class="modal-icon" width="18" height="18">
-                        <use xlink:href="./img/symbol-defss.svg#icon-person-black-18dp-1"></use>
-                    </svg>
-                </div>
-                <label for="tell">Телефон</label>
-                <div class="div-form">
-                    <input id="tell" type="tell" name="tell">
-                    <svg class="modal-icon" width="18" height="18">
-                        <use xlink:href="./img/symbol-defss.svg#icon-phone-black-18dp-1"></use>
-                    </svg>
-                </div>
-                <label for="email">Почта</label>
-                <div class="div-form">
-                    <input id="email" type="email" name="email">
-                    <svg class="modal-icon" width="18" height="18">
-                        <use xlink:href="./img/symbol-defss.svg#icon-email-black-18dp-1"></use>
-                    </svg>
-                </div>
-                <textarea name="" id="" cols="" rows="" placeholder="Введите текст"></textarea>
-                <input class="checkbox" id="checkbox" type="checkbox" name="topic">
-                <label for="checkbox">Соглашаюсь с рассылкой и принимаю Условия договора</label>
-                <button class="">Отправить</button>
-            </form>
         </div>
     </div>
     <script src="./modal.js"></script>
